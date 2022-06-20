@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'firearm.apps.FirearmConfig'
+    'firearm.apps.FirearmConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -75,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'my_armory.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database

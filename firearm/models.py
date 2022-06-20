@@ -8,15 +8,19 @@ class Firearm(models.Model):
     HANDGUN = 'handgun'
     REVOLVER = 'revolver'
     MUSKET = 'musket'
+    MG = 'mg'
+    SMG = 'smg'
     FIREARM_TYPES = [
         (RIFLE, 'Rifle'),
         (SHOTGUN, 'Shotgun'),
         (HANDGUN, 'Handgun'),
         (REVOLVER, 'Revolver'),
-        (MUSKET, 'Musket')
+        (MUSKET, 'Musket'),
+        (MG, 'Machine Gun'),
+        (SMG, 'Submachine Gun')
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    type = models.CharField(max_length=8)
+    type = models.CharField(max_length=8, choices=FIREARM_TYPES)
     manufacturer = models.CharField(max_length=64)
     model = models.CharField(max_length=32)
     caliber = models.CharField(max_length=32)

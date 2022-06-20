@@ -3,7 +3,7 @@ import dj_database_url
 
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = bool(os.environ.get('DEBUG'))
+DEBUG = os.environ.get('DEBUG')
 print(type(DEBUG))
 print(DEBUG)
 

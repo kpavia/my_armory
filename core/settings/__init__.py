@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firearm.apps.FirearmConfig',
-    'rest_framework'
+    'rest_framework',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
@@ -88,6 +89,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+# change to custom User model
+
+AUTH_USER_MODEL = 'user.User'
 
 
 # Password validation

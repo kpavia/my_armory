@@ -33,7 +33,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_HOSTS = [
     'https://my-armory.herokuapp.com/',
-    '127.0.0.1:8000'
+    '127.0.0.1:8000',
+    'my-armory.herokuapp.com/'
 ]
 
 

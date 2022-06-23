@@ -31,7 +31,7 @@ class Firearm(models.Model):
 
     
     def __str__(self):
-        return f'User: {self.user}, {self.type}, {self.manufacturer} {self.model}, {self.caliber}'
+        return f'{self.user}, {self.type}, {self.manufacturer} {self.model}, {self.caliber}'
     
 
     class Meta:

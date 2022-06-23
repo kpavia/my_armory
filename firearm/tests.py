@@ -1,5 +1,4 @@
 from django.test import TestCase
-from rest_framework.test import APIClient
 from .models import Firearm
 from user.models import User
 import datetime
@@ -36,4 +35,24 @@ class FirearmDatabaseTest(TestCase):
         """
         db_record = Firearm.objects.filter(user=self.user, serial_number='0000001')
         self.assertTrue(db_record)
+    
+
+    def test_db_constraint(self):
+        """
+        Test the unique constraint of the DB.
+        """
+        try:
+            new_entry = Firearm.objects.create(
+                user=self.user,
+                type='Rifle',
+                manufacturer='Springfield Armory',
+                model='M1 Garand',
+                caliber='.30-06',
+                serial_number='0000001'
+            )
+            constraint_violated = False
+        except Exception as e:
+            constraint_violated = True
+        
+        self.assertTrue(constraint_violated)
 
